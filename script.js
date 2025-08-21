@@ -94,7 +94,7 @@ function updateProgress() {
             .filter(r => r.status === "pending")
             .reduce((sum, r) => sum + expenseModel.getRowTotal(r), 0);
     const percent = total > 0 ? Math.round((spent / total) * 100) : 0;
-    document.getElementById('progress-text').textContent = `${percent}% पूर्ण`;
+    document.getElementById('progress-text').textContent = `${percent}% पूरा`;
 }
 
 renderTable();
@@ -184,4 +184,5 @@ function showShareFeedback(msg) {
     setTimeout(() => {
         shareFeedback.classList.remove('visible');
     }, 1800);
+
 }
