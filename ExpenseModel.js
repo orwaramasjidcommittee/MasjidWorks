@@ -50,8 +50,8 @@ export class ExpenseModel {
   //  },
     {
         name: "फर्श/पाइपिंग का काम",
-        status: "completed",
-        type: "expense",
+        status: "pending",
+        type: "estimate",
         subRows: [
             { name: "👷 मज़दूरी", amount: 6500, type: "मज़दूरी" },
             { name: "🚰 पाइप", amount: 1500, type: "सामान" },
@@ -133,4 +133,5 @@ export class ExpenseModel {
 }
 
  
+
 
