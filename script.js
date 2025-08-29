@@ -24,6 +24,14 @@ function getAmountClass(type) {
     return "amount";
 }
 
+// Helper to format date as "Aug 29, 2025"
+function formatDate(dateStr) {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    if (isNaN(date)) return dateStr; // fallback for invalid date
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 function renderTable() {
     let html = '';
     expenseModel.getRows().forEach(row => {
@@ -38,13 +46,16 @@ function renderTable() {
         row.subRows.forEach(sub => {
             html += `
             <tr class="sub-row">
-                <td colspan="4" style="padding:0;border:none;">
-                    <div class="sub-row-inner">
-                        <span class="sub-item">${sub.name}</span>
-                        <span style="margin:0 20px;">---</span>
-                        <span class="${getAmountClass(row.type)}">₹${sub.amount.toLocaleString()}</span>
-                    </div>
+                <td style="padding-left:2.5em; background:#f9f9f9; border:none;">
+                    <span class="sub-item">${sub.name}</span>
                 </td>
+                <td style="background:#f9f9f9; color:#888; font-size:0.96em; border:none;">
+                    ${sub.date ? formatDate(sub.date) : ''}
+                </td>
+                <td class="${getAmountClass(row.type)}" style="background:#f9f9f9; border:none;">
+                    ₹${sub.amount.toLocaleString()}
+                </td>
+                <td style="background:#f9f9f9; border:none;"></td>
             </tr>
             `;
         });

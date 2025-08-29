@@ -384,6 +384,14 @@
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+    display: none;
+ }
+
+ .sub-row.open {
+    height: auto;
+    opacity: 1;
+    pointer-events: auto;
+    display: table-row;
  }
 
  .sub-row .sub-row-inner {
@@ -394,12 +402,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
- }
-
- .sub-row.open {
-    height: auto;
-    opacity: 1;
-    pointer-events: auto;
  }
 
  .sub-row.open .sub-row-inner {
@@ -447,6 +449,17 @@
     display: flex;
     justify-content: center;
     margin: 30px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;flex-wrap: wrap;
+}
+
+.donation-section.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .donation-card {
@@ -690,6 +703,14 @@
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+    display: none;
+}
+
+.sub-row.open {
+    height: auto;
+    opacity: 1;
+    pointer-events: auto;
+    display: table-row;
 }
 
 .sub-row .sub-row-inner {
@@ -700,12 +721,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.sub-row.open {
-    height: auto;
-    opacity: 1;
-    pointer-events: auto;
 }
 
 .sub-row.open .sub-row-inner {
@@ -857,6 +872,18 @@
     color: #009688;
     font-weight: 700;
     letter-spacing: 0.02em;
+}
+
+/* Hide sub-rows by default */
+.sub-row { display: none; }
+
+/* Show sub-rows when .open is added */
+.sub-row.open { display: table-row; }
+
+/* Optional: Make all columns equal width */
+#expense-table-body tr td {
+    width: 25%;
+    box-sizing: border-box;
 }
 
 
