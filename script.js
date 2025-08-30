@@ -80,7 +80,7 @@ function updateSummary() {
     // Calculate totals using your ExpenseModel methods or data
     const rows = expenseModel.getRows();
     const spent = rows
-        .filter(r => r.status === "completed")
+        .filter(r => (r.status === "completed" || r.status === "sponsored"))
         .reduce((sum, r) => sum + expenseModel.getRowTotal(r), 0);
 
     const estimate = rows
