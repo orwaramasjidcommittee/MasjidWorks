@@ -55,6 +55,9 @@ function renderTable() {
                 <td class="${getAmountClass(row.type)}" style="background:#f9f9f9; border:none;">
                     ₹${sub.amount.toLocaleString()}
                 </td>
+                <td class="${getAmountClass(row.type)}" style="padding-left:2.5em; background:#f9f9f9; border:none;">
+                    <span class="sub-item">${sub.note ? sub.note : ''}</span>
+                </td>
                 <td style="background:#f9f9f9; border:none;"></td>
             </tr>
             `;
