@@ -880,11 +880,6 @@
 /* Show sub-rows when .open is added */
 .sub-row.open { display: table-row; }
 
-/* Optional: Make all columns equal width */
-#expense-table-body tr td {
-    width: 25%;
-    box-sizing: border-box;
-}
 
 
 
